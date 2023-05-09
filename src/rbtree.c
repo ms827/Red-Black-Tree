@@ -337,7 +337,7 @@ int rbtree_erase(rbtree *t, node_t *p) {
   }
   free(p);                                // 삭제한 노드가 가리키는 공간 삭제
   p = NULL;                               // 할당 해제 후 삭제한 노드값을 NULL로 초기화
-  if (p_original_color == RBTREE_BLACK) { // p_original_color가 BLACK 일 때, 즉 삭제한 노드의 색이 BLACK일 때(특성 5 위반)
+  if (p_original_color == RBTREE_BLACK) { // p_original_color가 BLACK 일 때(특성 5 위반)
     rbtree_erase_fixup(t, x);                // 노드의 색을 바꿈
   }
   return 0;
